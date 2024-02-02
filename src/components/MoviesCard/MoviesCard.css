@@ -1,0 +1,70 @@
+.card {
+    display: flex;
+    padding: 18px 0;
+    flex-direction: column;
+    max-width: 100%;
+    border-radius: 10px;
+    background-color: #222222;
+    font-family: 'Inter', Arial, sans-serif;
+    font-style: normal;
+    border-radius: 6px;
+}
+.card__description {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 18px 18px;
+}
+.card__name {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+}
+.card__duration {
+    margin: 0;
+    padding: 0;
+    color: #8B8B8B;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+}
+.card__image {
+    width: 100%;
+    aspect-ratio: calc(36 / 20);
+    margin: 0;
+    padding: 0;
+}
+.card__save-button {
+    margin: 18px auto 0;
+    padding: 0;
+    width: 100px;
+    height: 29px;
+    border-radius: 30px;
+    background-color: #313131;
+    border: none;
+}
+.card__save-button:hover {
+    opacity: 0.8;
+    transition: opacity 0.1s linear;
+    cursor: pointer;
+}
+.card__save-button_active {
+    background-color: #ee3465;
+    background-image: url("../../images/MoviesCard/card__save-button.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.card__button-text {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 11px;
+    display: none;
+}
+.card__button-text_active {
+    display: inline-block;
+}

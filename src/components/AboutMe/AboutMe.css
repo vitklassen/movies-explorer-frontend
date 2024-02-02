@@ -1,0 +1,173 @@
+.student {
+    display: flex;
+    flex-direction: column;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 110px 70px 115px;
+    box-sizing: border-box;
+    background-color: #202020;
+    font-family: 'Inter', Arial, sans-serif;
+    font-style: normal;
+}
+.student__header {
+    display: flex;
+    box-sizing: border-box;
+    max-width: 100%;
+    border-bottom: 1px solid #DADADA;
+    margin: 0 0 66px 0;
+}
+.student__title {
+    margin: 0 0 23px 0;;
+    padding: 0;
+    text-align: left;
+    color: #FFFFFF;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 26.63px;
+}
+.student__profile {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 100px;
+    padding: 0;
+    max-width: 100%;
+}
+.student__description {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    color: white;
+}
+.student__name {
+    margin: 0 0 18px;
+    padding: 0;
+    text-align: left;
+    max-width: 100%;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 58px;
+}
+.student__job {
+    margin: 0 0 26px;
+    padding: 0;
+    text-align: left;
+    max-width: 100%;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 20px;
+}
+.student__info {
+    margin: 0 0 99px;
+    padding: 0;
+    text-align: left;
+    max-width: 100%;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+}
+.student__github {
+    margin: 0 0 1px;
+    padding: 0;
+    text-align: left;
+    max-width: 100%;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16.94px; 
+    text-decoration: none;
+    color: white;
+}
+.student__github:hover {
+    opacity: 0.7;
+    transition: opacity 0.1s linear;
+    cursor: pointer;
+}
+.student__photo {
+    margin: 0;
+    padding: 0;
+    max-width: 270px;
+    max-height: 327px;
+    border-radius: 10px;
+}
+@media screen and (max-width: 992px){
+    .student {
+        max-width: 100%;
+        padding: 90px 50px 80px;
+    }
+    .student__profile {
+        margin: 0 0 90px;
+    }
+    .student__description {
+        max-width: 364px;
+    }
+    .student__name {
+        margin: 0 0 16px;
+        font-size: 40px;
+        line-height: 40px;
+    }
+    .student__job {
+        margin: 0 0 20px;
+        font-size: 12px;
+        line-height: 18px;
+    }
+    .student__info {
+        margin: 0 0 87px;
+        font-size: 12px;
+        line-height: 18px;
+    }
+    .student__github {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 16.94px; 
+    }
+    .student__photo {
+        max-width: 255px;
+        max-height: 307px;
+    }
+}
+@media screen and (max-width: 576px){
+    .student {
+        padding: 70px 14px;
+    }
+    .student__header {
+        margin: 0 0 60px 0;
+    }
+    .student__title {
+        margin: 0 0 28px 0;;
+        font-size: 18px;
+        line-height: 21.78px;
+    }
+    .student__profile {
+        flex-direction: column;
+        margin: 0 0 70px;
+    }
+    .student__description {
+        max-width: 100%;
+        order: 1;
+    }
+    .student__name {
+        margin: 0 0 20px;
+        font-size: 30px;
+        line-height: 36.31px;
+    }
+    .student__job {
+        margin: 0 0 20px;
+        font-size: 11px;
+        line-height: 16px;
+    }
+    .student__info {
+        margin: 0 0 40px;
+        font-size: 11px;
+        line-height: 16px;
+    }
+    .student__photo {
+        max-width: 292px;
+        max-height: 352px;
+        margin: 0 auto 40px;
+    }
+}
+@media screen and (max-width: 320px){
+    .student__photo {
+        margin: 0 0 40px;
+    }
+}
+

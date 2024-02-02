@@ -1,0 +1,115 @@
+.formcontainer {
+    max-width: 1280px;
+    background-color: #202020;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 70px 442px;
+    box-sizing: border-box;
+    font-family: 'Inter', Arial, sans-serif;
+    font-style: normal;
+}
+.formcontainer__logo {
+    margin: 0;
+    max-width: 38px;
+    max-height: 38px;
+}
+.formcontainer__title {
+    max-width: 100%;
+    margin: 40px 0;
+    padding: 0;
+    text-align: left;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 29.05px;
+    color: #FFFFFF;
+}
+.formcontainer__form {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+}
+.formcontainer__label {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    margin: 0;
+    margin-bottom: 24px;
+}
+.formcontainer__label:last-child {
+    margin-bottom: 6px;
+}
+.formcontainer__span {
+    margin: 0;
+    margin-bottom: 5px;
+    padding: 0;
+    text-align: left;
+    color: #8B8B8B;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 12.1px;
+    max-width: 100%;
+}
+.formcontainer__span_type_error {
+    margin-bottom: 134px;
+    color: #202020;
+}
+.formcontainer__input {
+    margin: 0;
+    padding: 0 0 10px;
+    max-width: 100%;
+    text-align: left;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #424242;
+    color: white;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.94px;
+    background-color: #202020;
+}
+.formcontainer__input:focus {
+    border-bottom: 1px solid #4285F4;
+}
+.formcontainer__button {
+    width: 100%;
+    height: 45px;
+    background-color: #4285F4;
+    margin: 0;
+    margin-bottom: 16px;
+    padding: 0;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.94px;
+    border: none;
+    border-radius: 5px;
+}
+.formcontainer__button:hover {
+    opacity: 0.8;
+    transition: opacity 0.1s linear;
+    cursor: pointer;
+}
+.formcontainer__description {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    max-width: 100%;
+    color: #8B8B8B;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.94px;
+    text-decoration: none;
+}
+.formcontainer__link {
+    color: #4285F4;
+}
+.formcontainer__link:hover {
+    opacity: 0.7;
+    transition: opacity 0.1s linear;
+    cursor: pointer;
+}
