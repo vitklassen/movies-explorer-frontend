@@ -40,15 +40,27 @@
     transition: opacity 0.1s linear;
     cursor: pointer;
 }
-@media screen and (max-width: 768px){
+@media screen and (max-width: 992px){
     .movies {
         padding: 70px 30px 80px;
         max-width: 100%;
     }
+    .movies__cards {
+        grid-template-columns: repeat(auto-fill, minmax(342px, 1fr));
+        column-gap: 24px;
+        row-gap: 35px;
+    }
+    .movies__button {
+        margin-top: 80px;
+    }
 }
-@media screen and (max-width: 320px){
+@media screen and (max-width: 576px){
     .movies {
-        padding: 70px 30px 80px;
-        max-width: 100%;
+        padding:70px 10px 80px;
+    }
+    .movies__cards {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        column-gap: 0;
+        row-gap: 16px;
     }
 }

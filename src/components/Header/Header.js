@@ -1,49 +1,26 @@
-import logoPath from "../../images/Header/header__logo.svg";
-import profilePath from "../../images/Header/header__profile-button.svg"
-import { NavLink } from "react-router-dom";
+import Logo from "../Logo/Logo";
+import Navigation from "../Navigation/Navigation";
+import NavTab from "../NavTab/NavTab";
+import { useState } from "react";
 function Header(props) {
+  const [isMenuOpen, setMenuOpen] = useState(false);
+  const menuHandler = () => {
+    console.log('working');
+    setMenuOpen(!isMenuOpen);
+  }
+const openMenu = () => {
+  console.log('open');
+    setMenuOpen(true);
+}
+const closeMenu = () => {
+  console.log('close');
+    setMenuOpen(false);
+}
   return (
     <header className={`header ${props.color ? "header_color_green" : ""}`}>
-      <NavLink className="header__main-link" to="/">
-        <img className="header__logo" src={logoPath}></img>
-      </NavLink>
-      <nav className="header__navigation">
-        {props.loggedIn ? (
-          <>
-            <NavLink
-              to="/movies"
-              className={({isActive}) => `header__link header__link_to_movie ${isActive ? "header__link_active" : ""}`}
-            >
-              Фильмы
-            </NavLink>
-            <NavLink
-              to="/saved-movies"
-              className={({isActive}) => `header__link header__link_to_saved-movie ${isActive ? "header__link_active" : ""}`}
-            >
-              Сохранённые фильмы
-            </NavLink>
-            <NavLink className="header__link header__link_to_profile" to="/profile">
-              <img className="header__profile-button" src={profilePath}></img>
-            </NavLink>
-          </>
-        ) : (
-          <>
-            <NavLink
-              to="/signup"
-              className="header__link header__link_to_register"
-            >
-              Регистрация
-            </NavLink>
-            <NavLink
-              to="/signin"
-              className="header__link header__link_to_login"
-            >
-              Войти
-            </NavLink>
-          </>
-        )}
-      </nav>
-      <button className='header__button-navigate'></button>
+      <Logo form={false} />
+      <Navigation loggedIn={props.loggedIn} color={props.color} handler={openMenu}/>
+      <NavTab isOpen={isMenuOpen} handler={closeMenu} />
     </header>
   );
 }

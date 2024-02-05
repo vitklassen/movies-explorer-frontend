@@ -3,7 +3,7 @@
     justify-content: space-between;
     max-width: 1280px;
     margin: 0 auto;
-    padding: 0 70px 0;
+    padding: 0 70px;
     background-color: #202020;
     box-sizing: border-box;
     font-family: 'Inter', Arial, sans-serif;
@@ -12,120 +12,14 @@
 .header_color_green {
     background-color: #073042;
 }
-.header__logo {
-    margin: 0;
-    max-width: 38px;
-    max-height: 38px;
-}
-.header__main-link {
-    margin: auto 0;
-    max-width: 38px;
-    max-height: 38px;
-}
-.header__navigation {
-    display: flex;
-    margin: 21px 0 23px 0;
-    max-width: 380px;
-}
-.header__link {
-    margin: auto 0;
-    padding: 0;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 18px;
-    text-decoration: none;
-    color: #FFFFFF;
-}
-.header__link:hover {
-    opacity: 0.7;
-    transition: opacity 0.1s linear;
-    cursor: pointer;
-}
-.header__link_active {
-    font-weight: 500;
-}
-.header__link_to_movie {
-    margin-right: 20px;
-}
-.header__link_to_saved-movie {
-    margin-right: 50px;
-}
-.header__link_to_profile {
-    max-width: 100px;
-    max-height: 32px;
-    margin: 0;
-    padding: 0;
-}
-.header__link_to_register {
-    margin-right: 30px;
-}
-.header__link_to_login {
-    width: 76px;
-    height: 32px;
-    margin: 0;
-    padding: 0;
-    background-color: #3DDC84;
-    border-radius: 3px;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 16px;
-    color: black;
-    text-align: center;
-}
-.header__signin-button {
-    max-width: 76px;
-    max-height: 32px;
-    margin: 0;
-    padding: 0;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 16px;
-    color: black;
-    text-align: center;
-}
-.header__button-navigate {
-    width: 44px;
-    height: 44px;
-    padding: 11px 8px 10px;
-    appearance: none;
-    border: none;
-    background-image: url('../../images/Header/header__navigate.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100% 100%;
-    background-color: #073042;
-    display: none;
-}
-.header__button-navigate:hover {
-    opacity: 0.8;
-    transition: opacity 0.1s linear;
-    cursor: pointer;
-}
 @media screen and (max-width: 768px){
     .header {
         max-width: 100%;
         padding: 15px 30px;
     }
-    .header__navigation {
-        display: none;
-    }
-    .header__link {
-        display: none;
-    }
-    .header__link_active {
-        font-weight: 400;
-        border-bottom: 2px solid #000000;
-    }
-    .header__button-navigate {
-        display: block;
-    }
 }
 @media screen and (max-width: 576px){
     .header {
         padding: 15px 14px 16px;
-    }
-    .header__button-navigate {
-        width: 40px;
-        height: 43px;
     }
 }

@@ -7,7 +7,7 @@ function MoviesCardList(props) {
         <SearchForm />
         <div className="movies__cards">
           {props.cards.map((card) => {
-            return <MoviesCard name={card.name} duration={card.duration} />;
+            return <MoviesCard name={card.name} duration={card.duration} saved={props.saved}/>;
           })}
         </div>
         {props.children}

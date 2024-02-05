@@ -56,6 +56,23 @@
     background-repeat: no-repeat;
     background-position: center;
 }
+.card__delete-button {
+    margin: 18px auto 0;
+    padding: 0;
+    width: 100px;
+    height: 29px;
+    border-radius: 30px;
+    background-color: #313131;
+    border: none;
+    background-image: url("../../images/MoviesCard/card__delete-button.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.card__save-button:hover {
+    opacity: 0.8;
+    transition: opacity 0.1s linear;
+    cursor: pointer;
+}
 .card__button-text {
     margin: 0;
     padding: 0;
@@ -67,4 +84,21 @@
 }
 .card__button-text_active {
     display: inline-block;
+}
+@media screen and (max-width: 576px){
+    .card {
+        padding: 14px 0;
+    }
+    .card__description {
+        margin: 0 14px 14px;
+    }
+    .card__name {
+        font-size: 12px;
+    }
+    .card__duration {
+        font-size: 10px;
+    }
+    .card__image {
+        aspect-ratio: calc(300 / 168);
+    }
 }

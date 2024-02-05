@@ -1,0 +1,15 @@
+.logo {
+    margin: auto 0;
+    max-width: 38px;
+    max-height: 38px;
+}
+.logo__image {
+    margin: auto 0;
+    max-width: 38px;
+    max-height: 38px;
+}
+@media screen and (max-width: 576px){
+    .logo_place_form {
+        margin: 0 auto;
+    }
+}

@@ -16,7 +16,7 @@
 }
 .form__input {
     display: block;
-    width: 80%;
+    width: 70%;
     padding: 0 0 0 15px;
     border: none;
     margin: 0;
@@ -45,4 +45,22 @@
     opacity: 0.8;
     transition: opacity 0.1s linear;
     cursor: pointer;
+}
+@media screen and (max-width: 576px){
+    .form {
+        max-width: calc(100% * 292 / 300);
+        margin: 0 auto;
+    }
+    .form__search {
+        padding: 6px 6px;
+    }
+    .form__input {
+        padding: 0 0 0 6px;
+        font-size: 16px;
+        line-height: 16px;
+    }
+    .form__button {
+        width: 80px;
+        height: 44px;
+    }
 }

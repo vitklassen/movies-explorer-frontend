@@ -13,16 +13,20 @@ function MoviesCard(props) {
       </div>
       <img className="card__image" src={imagePath} alt="Постер"></img>
       <button
-        className={`card__save-button ${
-          isSaved ? "card__save-button_active" : ""
+        className={`${
+          props.saved
+            ? "card__delete-button"
+            : `card__save-button ${isSaved ? "card__save-button_active" : ""}`
         }`}
-        onClick={handleChange}
+        onClick={!props.saved ? handleChange : null}
       >
         <p
           className={`card__button-text ${
             isSaved ? "" : "card__button-text_active"
           }`}
-        >Сохранить</p>
+        >
+          Сохранить
+        </p>
       </button>
     </div>
   );

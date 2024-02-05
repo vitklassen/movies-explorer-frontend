@@ -7,6 +7,8 @@ import Movies from "../Movies/Movies.js";
 import movies from "../../utils/movies.js";
 import { useEffect, useState } from "react";
 import ErrorPage from "../ErrorPage/ErrorPage.js";
+import SavedMovies from "../SavedMovies/SavedMovies.js";
+import Profile from "../Profile/Profile.js";
 function App() {
   const [loggedIn, setLoggedIn] = useState(true);
   return (
@@ -20,6 +22,11 @@ function App() {
           path="/movies"
           element={<Movies loggedIn={loggedIn} cards={movies}/>}
         />
+        <Route
+          path="/saved-movies"
+          element={<SavedMovies loggedIn={loggedIn} cards={movies}/>}
+        />
+        <Route path="/profile" element={<Profile loggedIn={loggedIn} />} />
       </Routes>
     </>
   );

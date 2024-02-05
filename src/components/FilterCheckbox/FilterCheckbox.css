@@ -34,3 +34,17 @@
     margin: 0 0 0 14px;
     padding: 0;
 }
+@media screen and (max-width: 768px){
+    .toggle {
+        margin: 26px auto 51px 0;
+    }
+}
+@media screen and (max-width: 320px){
+    .toggle {
+        margin: 30px auto 63px 0;
+    }
+    .toggle__text {
+        font-size: 11px;
+        margin: 0 0 0 13px;
+    }
+}
