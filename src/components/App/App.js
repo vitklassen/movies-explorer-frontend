@@ -10,7 +10,7 @@ import ErrorPage from "../ErrorPage/ErrorPage.js";
 import SavedMovies from "../SavedMovies/SavedMovies.js";
 import Profile from "../Profile/Profile.js";
 function App() {
-  const [loggedIn, setLoggedIn] = useState(true);
+  const [loggedIn, setLoggedIn] = useState(false);
   return (
     <>
       <Routes>

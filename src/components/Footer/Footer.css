@@ -1,9 +1,9 @@
 .footer {
     display: flex;
     flex-direction: column;
-    max-width: 1280px;
+    width: 1280px;
     margin: 0 auto;
-    padding: 79px 70px 20px;
+    padding: 70px 70px 20px;
     box-sizing: border-box;
     background-color: #202020;
     font-family: 'Inter', Arial, sans-serif;
@@ -58,9 +58,13 @@
 .footer__link:first-child {
     margin-right: 20px;
 }
-@media screen and (max-width: 768px){
+@media screen and (max-width: 1280px){
     .footer {
         max-width: 100%;
+    }
+}
+@media screen and (max-width: 768px){
+    .footer {
         padding: 79px 30px 20px;
     }
     .footer__author {

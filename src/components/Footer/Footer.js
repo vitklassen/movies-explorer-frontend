@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <section className="footer">
+    <footer className="footer">
       <h2 className="footer__title">
         Учебный проект Яндекс.Практикум х BeatFilm.
       </h2>
@@ -13,7 +13,7 @@ function Footer() {
           <a className="footer__link" href="https://github.com/vitklassen" target="_blank">Github</a>
         </nav>
       </div>
-    </section>
+    </footer>
   );
 }
 export default Footer;

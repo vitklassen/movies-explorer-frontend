@@ -5,7 +5,10 @@ function Movies(props) {
   return (
     <>
       <Header loggedIn={true} color={false} />
-      <MoviesCardList cards={props.cards} children={<button className="movies__button">Ещё</button>}/>
+      <MoviesCardList
+        cards={props.cards}
+        children={<button className="movies__button">Ещё</button>}
+      />
       <Footer />
     </>
   );

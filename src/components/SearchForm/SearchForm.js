@@ -2,7 +2,7 @@ import FilterCheckbox from "../FilterCheckbox/FilterCheckbox.js";
 function SearchForm() {
   return (
     <form className="form">
-      <label className="form__search">
+      <div className="form__search">
         <input
           className="form__input"
           name="movie"
@@ -12,7 +12,7 @@ function SearchForm() {
         <button className="form__button" type="submit">
           Поиск
         </button>
-      </label>
+      </div>
       <FilterCheckbox />
     </form>
   );

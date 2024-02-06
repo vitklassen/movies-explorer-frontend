@@ -43,11 +43,12 @@
     width: 310px;
     height: 304px;
 }
-.promo__button {
+.promo__link {
+    text-decoration: none;
     margin: 0;
-    padding: 10px 19px;
-    width: 129px;
-    height: 36px;
+    padding: 10px 0;
+    max-width: 129px;
+    max-height: 36px;
     background-color: #073042;
     border: 1px solid rgba(255, 255, 255, 0.6);
     border-radius: 3px;
@@ -56,9 +57,10 @@
     line-height: 16px;
     text-align: center;
     color: #FFFFFF;
+    display: block;
 }
-.promo__button:hover {
-    opacity: 0.8;
+.promo__link:hover {
+    opacity: 0.7;
     transition: opacity 0.1s linear;
     cursor: pointer;
 }
@@ -88,9 +90,10 @@
         max-width: 260px;
         text-align: center;
     }
-    .promo__button {
+    .promo__link {
         order: 2;
         margin: 0 auto;
+        padding: 10px 20px;
     }
 }
 @media screen and (max-width: 576px){

@@ -1,7 +1,7 @@
 .header {
     display: flex;
     justify-content: space-between;
-    max-width: 1280px;
+    width: 1280px;
     margin: 0 auto;
     padding: 0 70px;
     background-color: #202020;
@@ -12,14 +12,18 @@
 .header_color_green {
     background-color: #073042;
 }
-@media screen and (max-width: 768px){
+@media screen and (max-width: 1280px){
     .header {
         max-width: 100%;
+    }
+}
+@media screen and (max-width: 768px){
+    .header {
         padding: 15px 30px;
     }
 }
 @media screen and (max-width: 576px){
     .header {
-        padding: 15px 14px 16px;
+        padding: 18px 14px 16px;
     }
 }

@@ -10,7 +10,7 @@ function NavTab(props) {
           <NavLink
             to="/"
             className={({ isActive }) =>
-              `menu__link ${isActive ? "menu_link_active" : ""}`
+              `menu__link ${isActive ? "menu__link_active" : ""}`
             }
           >
             Главная
@@ -18,7 +18,7 @@ function NavTab(props) {
           <NavLink
             to="/movies"
             className={({ isActive }) =>
-              `menu__link ${isActive ? "menu_link_active" : ""}`
+              `menu__link ${isActive ? "menu__link_active" : ""}`
             }
           >
             Фильмы
@@ -26,7 +26,7 @@ function NavTab(props) {
           <NavLink
             to="/saved-movies"
             className={({ isActive }) =>
-              `menu__link ${isActive ? "menu_link_active" : ""}`
+              `menu__link ${isActive ? "menu__link_active" : ""}`
             }
           >
             Сохранённые фильмы
@@ -34,7 +34,7 @@ function NavTab(props) {
         </nav>
         <Link to="/profile" className="menu__profile">
           <img
-            className="navigation__profile-button"
+            className="menu__profile-button"
             src={props.color ? profileColorGreen : profileColorGray}
             alt="Аккаунт"
           ></img>

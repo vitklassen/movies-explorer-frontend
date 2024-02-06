@@ -7,6 +7,7 @@ function Login() {
         path="/signup"
         text="Ещё не зарегистрированы? "
         link="Регистрация"
+        login={true}
       />
   );
 }

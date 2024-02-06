@@ -6,7 +6,7 @@ function MoviesCard(props) {
     setSaved(!isSaved);
   }
   return (
-    <div className="card">
+    <li className="card">
       <div className="card__description">
         <h2 className="card__name">{props.name}</h2>
         <p className="card__duration">{props.duration}</p>
@@ -19,16 +19,9 @@ function MoviesCard(props) {
             : `card__save-button ${isSaved ? "card__save-button_active" : ""}`
         }`}
         onClick={!props.saved ? handleChange : null}
-      >
-        <p
-          className={`card__button-text ${
-            isSaved ? "" : "card__button-text_active"
-          }`}
-        >
-          Сохранить
-        </p>
+      >Сохранить
       </button>
-    </div>
+    </li>
   );
 }
 export default MoviesCard;

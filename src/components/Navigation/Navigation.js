@@ -56,7 +56,7 @@ function Navigation(props) {
               to="/signin"
               className="navigation__link navigation__link_to_login"
             >
-              <button className="navigation__signin-button">Войти</button>
+              Войти
             </NavLink>
           </>
         )}

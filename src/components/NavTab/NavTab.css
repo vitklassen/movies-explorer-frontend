@@ -41,11 +41,11 @@
 }
 .menu__link {
     margin: 0;
-    margin-bottom: 22px;
+    margin-bottom: 24px;
     padding: 0;
     padding-bottom: 4px;
-    text-align: center;
-    max-width: 100%;
+    align-self: center;
+    list-style: none;
     font-size: 18px;
     font-weight: 500;
     line-height: 21.78px; 
@@ -58,7 +58,7 @@
     transition: opacity 0.1s linear;
     cursor: pointer;
 }
-.menu_link_active {
+.menu__link_active {
     border-bottom: 2px solid white;
 }
 .menu__link:last-child {
@@ -76,8 +76,8 @@
     position: absolute;
     width: 22px;
     height: 22px;
-    top: 22px;
-    right: 22px;
+    top: 26px;
+    right: 27px;
     background-image: url('../../images/Navigation/menu__close-button.svg');
     background-repeat: no-repeat;
     background-position: center;

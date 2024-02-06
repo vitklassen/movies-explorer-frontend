@@ -7,7 +7,9 @@ function Promo() {
         <p className="promo__subtitle">Листай ниже, чтобы узнать больше про этот проект и его создателя.</p>
       </div>
       <img className="promo__image" src={ promoImagePath } alt='Картиночка'></img>
-      <button className='promo__button'>Узнать больше</button>
+      <a className='promo__link' href='#project'>
+        Узнать больше
+      </a>
     </section>
   );
 }
