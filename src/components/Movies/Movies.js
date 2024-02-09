@@ -7,6 +7,9 @@ function Movies(props) {
       <Header loggedIn={true} color={false} />
       <MoviesCardList
         cards={props.cards}
+        handleChangeMovieName={props.handleChangeMovieName}
+        movieName={props.movieName}
+        onSubmit={props.onSubmit}
         children={<button className="movies__button">Ещё</button>}
       />
       <Footer />

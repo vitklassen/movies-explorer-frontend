@@ -4,10 +4,22 @@ function MoviesCardList(props) {
   return (
     <>
       <main className="movies">
-        <SearchForm />
+        <SearchForm
+          onSubmit={props.onSubmit}
+          handleChangeMovieName={props.handleChangeMovieName}
+          movieName={props.movieName}
+        />
         <ul className="movies__cards">
           {props.cards.map((card) => {
-            return <MoviesCard name={card.name} duration={card.duration} saved={props.saved}/>;
+            return (
+              <MoviesCard
+                key={card.id}
+                image={`https://api.nomoreparties.co${card.image.url}`}
+                name={card.nameRU}
+                duration={card.duration}
+                saved={props.saved}
+              />
+            );
           })}
         </ul>
         {props.children}
