@@ -1,0 +1,127 @@
+.navigation {
+    display: flex;
+    margin: 21px 0 23px 0;
+    max-width: 390px;
+}
+.navigation__link {
+    margin: auto 0;
+    padding: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+.navigation__link:hover {
+    opacity: 0.7;
+    transition: opacity 0.1s linear;
+    cursor: pointer;
+}
+.navigation__link_active {
+    font-weight: 500;
+}
+.navigation__link_to_movie {
+    margin-right: 20px;
+}
+.navigation__link_to_saved-movie {
+    margin-right: 50px;
+}
+.navigation__link_to_profile {
+    max-width: 100px;
+    max-height: 32px;
+}
+.navigation__link_to_register {
+    margin-right: 30px;
+}
+.navigation__link_to_login {
+    max-width: 76px;
+    height: 32px;
+    margin: 0;
+    padding: 8px 20px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    color: black;
+    text-align: center;
+    background-color: #3DDC84;
+    border-radius: 3px;
+    border: none;
+    box-sizing: border-box;
+}
+/*.navigation__signin-button {
+    width: 76px;
+    height: 32px;
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    color: black;
+    text-align: center;
+    background-color: #3DDC84;
+    border-radius: 3px;
+    border: none;
+}*/
+.navigation__button {
+    width: 44px;
+    height: 44px;
+    padding: 11px 8px 10px;
+    appearance: none;
+    border: none;
+    background-image: url('../../images/Header/header__navigate.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    background-color: #202020;
+    display: none;
+}
+.navigation__button_color_green {
+    background-color: #073042;
+}
+.navigation__button:hover {
+    opacity: 0.8;
+    transition: opacity 0.1s linear;
+    cursor: pointer;
+}
+@media screen and (max-width: 768px){
+    .navigation {
+        margin: 0;
+    }
+    .navigation__link_to_movie {
+        display: none;
+    }
+    .navigation__link_to_saved-movie {
+        display: none;
+    }
+    .navigation__link_to_profile {
+        display: none;
+    }
+    .navigation__link_active {
+        font-weight: 400;
+        border-bottom: 2px solid #000000;
+    }
+    .navigation__button {
+        display: block;
+    }
+}
+@media screen and (max-width: 576px){
+    .navigation__button {
+        width: 40px;
+        height: 43px;
+    }
+    .navigation__link_to_register {
+        margin-right: 14px;
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 16px;
+    }
+    .navigation__link_to_login {
+        max-width: 54px;
+        max-height: 26px;
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 16px;
+        padding: 5px 12px;
+        margin: auto 0;
+    }
+}
