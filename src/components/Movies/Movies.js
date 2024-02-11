@@ -11,6 +11,8 @@ function Movies(props) {
         movieName={props.movieName}
         onSubmit={props.onSubmit}
         children={<button className="movies__button">Ещё</button>}
+        isCheckBox={props.isCheckBox}
+        handleClickCheckBox={props.handleClickCheckBox}
       />
       <Footer />
     </>

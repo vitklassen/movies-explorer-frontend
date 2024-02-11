@@ -41,7 +41,7 @@ function Profile(props) {
             </div>
             <div className="profile__buttons">
               <button className="profile__button">Редактировать</button>
-              <NavLink className="profile__signout-link" to="/">
+              <NavLink className="profile__signout-link" to="/" onClick={props.onSignOut}>
                 Выйти из аккаунта
               </NavLink>
             </div>

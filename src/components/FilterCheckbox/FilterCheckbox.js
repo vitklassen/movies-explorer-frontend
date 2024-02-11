@@ -1,13 +1,13 @@
-import { useState } from "react";
-
-function FilterCheckbox() {
-  const [checked, setChecked] = useState(false);
-  function handleChange() {
-    setChecked(!checked);
-  }
+function FilterCheckbox(props) {
   return (
     <label className="toggle" for="checkBoxId">
-      <input className="toggle__input" type="checkbox" id="checkBoxId" checked={checked} onChange={handleChange}/>
+      <input
+        className="toggle__input"
+        type="checkbox"
+        id="checkBoxId"
+        checked={props.isCheckBox}
+        onChange={props.handleClickCheckBox}
+      />
       <span className="toggle__pseudo-item"></span>
       <span className="toggle__text">Короткометражки</span>
     </label>

@@ -1,6 +1,9 @@
+import { useEffect, useState } from "react";
 import MoviesCard from "../MoviesCard/MoviesCard.js";
 import SearchForm from "../SearchForm/SearchForm.js";
+import { findShortMovies } from "../../utils/filterMovies.js";
 function MoviesCardList(props) {
+  const movieArray = props.isCheckBox ? findShortMovies(props.cards) : props.cards;
   return (
     <>
       <main className="movies">
@@ -8,9 +11,11 @@ function MoviesCardList(props) {
           onSubmit={props.onSubmit}
           handleChangeMovieName={props.handleChangeMovieName}
           movieName={props.movieName}
+          isCheckBox={props.isCheckBox}
+          handleClickCheckBox={props.handleClickCheckBox}
         />
         <ul className="movies__cards">
-          {props.cards.map((card) => {
+          {movieArray.map((card) => {
             return (
               <MoviesCard
                 key={card.id}
