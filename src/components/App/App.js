@@ -27,6 +27,8 @@ function App() {
   const [registerError, setRegisterError] = useState("");
   const [stateRegisterErrorButton, setStateRegisterErrorButton] =
     useState(false);
+  const [stateLoginErrorButton, setStateLoginErrorButton] = useState(false);
+  const [registerError, setRegisterError] = useState("");
   const navigate = useNavigate();
   const place = useLocation();
   useEffect(() => {
@@ -40,7 +42,6 @@ function App() {
           setCurrentUser({
             name: response.name,
             email: response.email,
-            password: response.password,
           });
         })
         .catch((err) => {

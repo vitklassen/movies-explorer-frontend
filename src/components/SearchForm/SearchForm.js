@@ -1,10 +1,17 @@
+import { useState } from "react";
 import FilterCheckbox from "../FilterCheckbox/FilterCheckbox.js";
 function SearchForm(props) {
+  const [error, setError] = useState('');
   function handleChange(e) {
     props.handleChangeMovieName(e.target.value);
   }
   function handleSubmit(e) {
     e.preventDefault();
+    if (props.movieName === '' || props.movieName === undefined) {
+      setError('Нужно ввести ключевое слово');
+      return
+    }
+    setError('');
     props.onSubmit();
   }
   return (
@@ -25,6 +32,7 @@ function SearchForm(props) {
           Поиск
         </button>
       </div>
+      <span className="form__error">{error}</span>
       <FilterCheckbox
         isCheckBox={props.isCheckBox}
         handleClickCheckBox={props.handleClickCheckBox}
