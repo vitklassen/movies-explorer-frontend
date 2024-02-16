@@ -1,0 +1,35 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 70px 0 0;
+    background-color: #202020;
+    box-sizing: border-box;
+    font-family: 'Inter', Arial, sans-serif;
+    font-style: normal;
+}
+.form-container__title {
+    margin: 40px 0;
+    padding: 0;
+    text-align: left;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29.05px;
+    color: #ffffff;
+}
+@media screen and (max-width: 768px){
+    .form-container {
+        padding-top: 232px;
+    }
+}
+@media screen and (max-width: 576px){
+    .form-container {
+        padding-top: 56px;
+        max-width: 260px;
+    }
+    .form-container__title {
+        margin: 50px 0 80px;
+        text-align: center;
+    }
+}

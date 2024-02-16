@@ -4,16 +4,14 @@ class Auth {
     this._url = url;
     this._header = header;
   }
-
   _sendRequest(url, options) {
     return fetch(url, options).then((response) => {
       if (response.ok) {
         return response.json();
       }
-      throw new Error("Что-то пошло не так...");
+      throw new Error(`Что-то пошло не так. Ошибка ${response.status}`);
     });
   }
-
   register(name, email, password) {
     return this._sendRequest(`${this._url}signup`, {
       method: "POST",

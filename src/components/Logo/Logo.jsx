@@ -1,8 +1,8 @@
 import { NavLink } from "react-router-dom";
 import logoPath from "../../images/Header/header__logo.svg";
-function Logo(props) {
+function Logo({form}) {
   return (
-    <NavLink className={`logo ${props.form ? 'logo_place_form': ''}`} to="/">
+    <NavLink className={`logo ${form ? 'logo_place_form': ''}`} to="/">
       <img className="logo__image" src={logoPath} alt="Лого"></img>
     </NavLink>
   );

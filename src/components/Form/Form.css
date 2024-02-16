@@ -1,189 +1,155 @@
-.formcontainer {
-    max-width: 1280px;
-    background-color: #202020;
-    margin: 0 auto;
-    padding: 70px 0;
-    box-sizing: border-box;
-    font-family: 'Inter', Arial, sans-serif;
-    font-style: normal;
-}
-.formcontainer__content {
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    max-width: 396px;
-}
-.formcontainer__logo {
-    margin: 0;
-    max-width: 38px;
-    max-height: 38px;
-}
-.formcontainer__title {
-    max-width: 396px;
-    margin: 40px 0;
-    padding: 0;
-    text-align: left;
-    font-size: 24px;
-    font-weight: 500;
-    line-height: 29.05px;
-    color: #FFFFFF;
-}
-.formcontainer__form {
+.form {
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     max-width: 396px;
-}
-.formcontainer__label {
-    display: flex;
-    flex-direction: column;
-    max-width: 100%;
-    margin: 0;
-    margin-bottom: 6px;
-    text-align: left;
-    color: #8B8B8B;
-    font-size: 10px;
-    font-weight: 400;
-    line-height: 12.1px;
-}
-.formcontainer__label:last-child {
-    margin-bottom: 6px;
-}
-.formcontainer__error-validation {
-    margin: 0;
-    margin-bottom: 6px;
-    padding: 0;
-    text-align: left;
-    color: #EE3465;
-    font-size: 10px;
-    font-weight: 400;
-    line-height: 12.1px;
-    max-width: 100%;
-}
-.formcontainer__input {
-    margin: 0;
-    padding: 0 0 10px;
-    max-width: 100%;
-    text-align: left;
-    outline: none;
     border: none;
-    border-bottom: 1px solid #424242;
-    color: white;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 16.94px;
-    background-color: #202020;
 }
-.formcontainer__input:focus {
-    border-bottom: 1px solid #4285F4;
-}
-.formcontainer__footer {
-    display: flex;
-    margin: 0;
-    margin-top: 111.5px;
-    max-width: 100%;
-    flex-direction: column;
-}
-.formcontainer__footer_type_login {
-    margin-top: 180px;
-}
-.formcontainer__submit-error {
+.form__content {
     margin: 0;
     padding: 0;
-    margin-bottom: 20px;
-    text-align: center;
-    color: #202020;
-    font-size: 11px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.form__content_type_login {
+    margin-bottom: calc(65px + 69px + 68.94px);
+}
+.form__content_type_register {
+    margin-bottom: calc(65px + 69px);
+}
+.form__fieldset {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 6px;
+    padding: 0;
+    max-width: 100%;
+    border: none;
+}
+.form__fieldset:last-child {
+    margin-bottom: 0;
+}
+.form__label {
+    margin: 0 0 5px;
+    padding: 0;
+    text-align: left;
     font-weight: 400;
-    line-height: 13.31px;
+    font-size: 10px;
+    line-height: 12.1px;
+    color: #8b8b8b;
 }
-.formcontainer__submit-error_active {
-    color: #EE3465;
+.form__input {
+    margin: 0 0 6px;
+    padding: 0 0 10px;
+    border-bottom: 1px solid #424242;
+    width: 100%;
+    text-align: left;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16.94px;
+    color: #ffffff;
+    background-color: #202020;
+    outline: none;
 }
-.formcontainer__button {
+.form__input:focus {
+    outline: 1px solid #ffffff;
+    border-radius: 3px;
+}
+.form__error {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    color: #202020;
+    display: block;
+    box-sizing: border-box;
+    text-align: left;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12.1px;
+    max-height: calc(12.1px * 2);
+}
+.form__error_active {
+    color: #ee3465;
+}
+.form__error_type_request {
+    margin-bottom: 16px;
+    text-align: center;
+}
+.form__footer {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.form__submit-button {
     width: 396px;
     height: 45px;
-    background-color: #4285F4;
-    margin: 0;
-    margin-bottom: 16px;
-    padding: 0;
-    color: white;
-    text-align: center;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 16.94px;
+    background-color: #4285f4;
     border: none;
-    border-radius: 5px;
+    border-radius: 3px;
+    margin: 0 0 16px;
+    padding: 0;
+    text-align: center;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16.94px;
 }
-.formcontainer__button:hover {
+.form__submit-button:hover {
     opacity: 0.8;
     transition: opacity 0.1s linear;
     cursor: pointer;
 }
-.formcontainer__button:disabled {
+.form__submit-button:disabled {
+    background-color: #f8f8f8;
+    color: #c2c2c2;
     opacity: 1;
-    background-color: #F8F8F8;
+    cursor: no-drop;
 }
-.formcontainer__description {
+.form__text {
     margin: 0;
     padding: 0;
     text-align: center;
-    max-width: 100%;
-    color: #8B8B8B;
-    text-align: center;
-    font-size: 14px;
+    color: #8b8b8b;
     font-weight: 400;
+    font-size: 14px;
     line-height: 16.94px;
     text-decoration: none;
 }
-.formcontainer__link {
-    color: #4285F4;
+.form__link {
+    color: #4285f4;
 }
-.formcontainer__link:hover {
+.form__link:hover {
     opacity: 0.7;
     transition: opacity 0.1s linear;
     cursor: pointer;
 }
-@media screen and (max-width: 768px){
-    .formcontainer {
-        max-width: 100%;
-        padding: 232px 0;
-    }
-}
 @media screen and (max-width: 576px){
-    .formcontainer {
-        padding: 56px 0 30px;
-    }
-    .formcontainer__content {
+    .form {
         max-width: 260px;
     }
-    .formcontainer__logo {
-        margin: 0 auto;
+    .form__content_type_login {
+        margin-bottom: calc(65px + 157px + 68.94px);
     }
-    .formcontainer__title {
-        max-width: 260px;
-        margin: 50px 0 80px;
-        text-align: center;
+    .form__content_type_register {
+        margin-bottom: calc(65px + 157px);
     }
-    .formcontainer__form {
-        max-width: 260px;
+    .form__error_type_request {
+        margin-bottom: 14px;
     }
-    .formcontainer__footer {
-        margin-top: 199px;
-    }
-    .formcontainer__footer_type_login {
-        margin-top: 268px;
-    }
-    .formcontainer__button {
+    .form__submit-button {
+        width: 260px;
         margin-bottom: 14px;
         font-size: 12px;
         line-height: 14.52px;
-        width: 260px;
     }
-    .formcontainer__description {
+    .form__text {
         font-size: 12px;
         line-height: 14.52px;
+    }
+    .form__link {
+        color: #4285f4;
     }
 }

@@ -1,4 +1,4 @@
-import Header from "../Header/Header.js";
+import Header from "../Header/Header.jsx";
 import Footer from "../Footer/Footer";
 import MoviesCardList from "../MoviesCardList/MoviesCardList.js";
 function Movies(props) {
