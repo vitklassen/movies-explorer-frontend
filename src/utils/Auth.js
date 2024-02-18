@@ -32,7 +32,7 @@ class Auth {
     });
   }
 
-  tokenCheck(token) {
+  checkToken(token) {
     return this._sendRequest(`${this._url}users/me`, {
       method: "GET",
       headers: {

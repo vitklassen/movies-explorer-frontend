@@ -2,6 +2,7 @@ import FormContainer from "../FormContainer/FormContainer";
 import Form from "../Form/Form";
 import { useFormWithValidation } from "../../hooks/useFormWithValidation";
 const Login = ({ onSubmit, loginError, loginStateError, isSending }) => {
+  //хук управления и валидации формы
   const { values, handleChange, errors, isValid, resetForm } =
     useFormWithValidation();
     const handleSubmit = (e) => {

@@ -1,6 +1,13 @@
 import { Link } from "react-router-dom";
-
-const ProfileForm = ({ onSubmit, isDisabled, children, onSignOut, onEdit, isEdit }) => {
+const ProfileForm = ({
+  onSubmit,
+  isDisabled,
+  children,
+  onSignOut,
+  error,
+  stateError,
+  buttonText,
+}) => {
   return (
     <form
       className="profile-form"
@@ -11,33 +18,32 @@ const ProfileForm = ({ onSubmit, isDisabled, children, onSignOut, onEdit, isEdit
       onSubmit={onSubmit}
     >
       {children}
-      {isEdit ? (
-        <div className="profile-form__footer">
-          <button
-            className="profile-form__edit-button"
-            type="button"
-            onClick={onEdit}
-          >
-            Редактировать
-          </button>
-          <button
-            className="profile-form__sign-out-button"
-            type="button"
-            onClick={onSignOut}
-          >
-            <Link to="/">Выйти из аккаунта</Link>
-          </button>
-        </div>
-      ) : (
-        <button
-          className="profile-form__save-button"
-          type="submit"
-          onSubmit={onSubmit}
-          disabled={isDisabled}
+      <div className="profile-form__footer">
+        <span
+          className={`profile-form__error profile-form__error_type_request ${
+            stateError ? "profile-form__error_active" : ""
+          }`}
         >
-          Сохранить
+          {error}
+        </span>
+        <button
+          className={`profile-form__button profile-form__button_type_edit`}
+          type="submit"
+          disabled={isDisabled}
+          onSubmit={onSubmit}
+        >
+          {buttonText}
         </button>
-      )}
+        <button
+          className="profile-form__button profile-form__button_type_sign-out"
+          type="button"
+          onClick={onSignOut}
+        >
+          <Link to="/" className="profile-form__link">
+            Выйти из аккаунта
+          </Link>
+        </button>
+      </div>
     </form>
   );
 };

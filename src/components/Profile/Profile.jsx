@@ -4,35 +4,32 @@ import ProfileForm from "../ProfileForm/ProfileForm";
 import { useFormWithValidation } from "../../hooks/useFormWithValidation";
 import { useContext, useEffect, useState } from "react";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
-const Profile = ({ loggedIn, onSubmit, isSending }) => {
-  const currentUser = useContext(CurrentUserContext);
-  const [isEditProfile, setEditProfile] = useState(false);
-  const [isSameDataError, setSameDataError] = useState(true);
+const Profile = ({ loggedIn, onSubmit, isSending, onSignOut, profileEditError, profileEditStateError }) => {
+  //хук управления и валидации формы
   const { values, handleChange, errors, isValid, resetForm } =
     useFormWithValidation();
-    //нажатие на кнопку Редактировать
-  const handleEditProfile = () => {
-    setEditProfile(true);
-  };
+  const currentUser = useContext(CurrentUserContext);
+  //проверка на одинаковые данные
+  const [isSameDataError, setSameDataError] = useState(true);
   //сабмит формы
   const handleSubmit = (e) => {
     e.preventDefault();
     const { name, email } = values;
     onSubmit(name, email);
-    resetForm();
+    resetForm(currentUser, {}, true);
   };
   //инициализация начальных данных
   useEffect(() => {
-    if (currentUser) {
+    if(currentUser) {
       resetForm(currentUser, {}, true);
     }
   }, [currentUser, resetForm]);
-  //проверка изменения даннх пользователя
+  //проверка изменения данных пользователя
   useEffect(() => {
     if((values.name === currentUser.name && values.email === currentUser.email)) {
-      setSameDataError(false);
+      setSameDataError(true);
     }
-    else setSameDataError(true);
+    else setSameDataError(false);
   }, [values, currentUser]);
   return (
     <>
@@ -40,9 +37,11 @@ const Profile = ({ loggedIn, onSubmit, isSending }) => {
       <FormContainer title={`Привет, ${currentUser.name}`} profileType={true}>
         <ProfileForm
           onSubmit={handleSubmit}
-          isEdit={isEditProfile}
-          onEdit={handleEditProfile}
           isDisabled={!isValid || isSending || isSameDataError}
+          onSignOut={onSignOut}
+          buttonText={isSending ? "Редактирование...":  "Редактировать"}
+          error={profileEditError}
+          stateError={profileEditStateError}
         >
           <div className="profile-form__content">
             <fieldset className="profile-form__fieldset">
@@ -53,12 +52,12 @@ const Profile = ({ loggedIn, onSubmit, isSending }) => {
                 <input
                   className="profile-form__input"
                   id="name"
+                  name="name"
                   type="text"
                   required
                   pattern="[a-zA-zа-яА-Я -]{2,30}$"
                   value={values.name || ""}
                   onChange={handleChange}
-                  readOnly={!isEditProfile}
                 ></input>
               </div>
               <span
@@ -79,12 +78,12 @@ const Profile = ({ loggedIn, onSubmit, isSending }) => {
                 <input
                   className="profile-form__input"
                   id="name"
+                  name="email"
                   type="email"
                   required
                   pattern="[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
                   value={values.email || ""}
                   onChange={handleChange}
-                  readOnly={!isEditProfile}
                 ></input>
               </div>
               <span

@@ -23,15 +23,22 @@ class MainApi {
   }
   getSavedMovies() {
     return this._sendRequest(`${this._url}movies`, {
-        method: "GET",
-        headers: {
-          authorization: `Bearer ${localStorage.getItem("jwt")}`,
-          "Content-Type": this._header,
-        },
-      });
+      method: "GET",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("jwt")}`,
+        "Content-Type": this._header,
+      },
+    });
   }
-  updateUserInfo() {
-    
+  updateUserInfo(name, email) {
+    return this._sendRequest(`${this._url}users/me`, {
+      method: "PATCH",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("jwt")}`,
+        "Content-Type": this._header,
+      },
+      body: JSON.stringify({ name: name, email: email }),
+    });
   }
 }
 
