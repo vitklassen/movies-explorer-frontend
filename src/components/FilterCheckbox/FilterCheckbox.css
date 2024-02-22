@@ -1,5 +1,5 @@
 .toggle {
-    margin: 9px auto 43px 0;
+    margin: 26px auto 43px 0;
     display: inline;
     color: white;
     font-family: 'Inter', Arial, sans-serif;
@@ -36,7 +36,7 @@
 }
 @media screen and (max-width: 768px){
     .toggle {
-        margin: 26px auto 51px 0;
+        margin-bottom: 51px;
     }
 }
 @media screen and (max-width: 320px){

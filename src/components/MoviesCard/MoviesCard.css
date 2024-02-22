@@ -2,7 +2,7 @@
     display: flex;
     padding: 18px 0;
     flex-direction: column;
-    max-width: 360px;
+    width: 360px;
     border-radius: 10px;
     background-color: #222222;
     font-family: 'Inter', Arial, sans-serif;
@@ -30,11 +30,24 @@
     font-size: 13px;
     line-height: 18px;
 }
+.card__link {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    border: none;
+}
+.card__link:hover {
+    opacity: 0.7;
+    transition: opacity 0.1s linear;
+    cursor: pointer;
+}
 .card__image {
-    max-width: 100%;
+    width: 100%;
     aspect-ratio: 36 / 20;
     margin: 0;
     padding: 0;
+    border: none;
 }
 .card__save-button {
     margin: 18px auto 0;
@@ -83,13 +96,13 @@
 }
 @media screen and (max-width: 768px){
     .card {
-        max-width: 342px;
+        width: 342px;
     }
 }
 @media screen and (max-width: 576px){
     .card {
         padding: 14px 0;
-        max-width: 300px;
+        width: 300px;
     }
     .card__description {
         margin: 0 14px 14px;
