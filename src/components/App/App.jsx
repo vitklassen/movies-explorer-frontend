@@ -133,7 +133,6 @@ function App() {
       "shortFilteredMovies",
       JSON.stringify(shortFilteredMovies)
     );
-    console.log(filteredMovies);
     if (filteredMovies && filteredMovies.length !== 0) {
       localStorage.setItem("currentMovie", movie);
       if (isMoviesCheckbox) {
