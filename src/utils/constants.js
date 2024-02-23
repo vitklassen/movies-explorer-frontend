@@ -4,7 +4,7 @@ export const settingsDevice = {
             total: 12,
             more: 3
         },
-        width: 1266
+        width: 1276
     },
     tablet: {
         cardsParamaters: {
@@ -18,6 +18,6 @@ export const settingsDevice = {
             total: 5,
             more: 2
         },
-        width: 583
+        width: 576
     }
 }

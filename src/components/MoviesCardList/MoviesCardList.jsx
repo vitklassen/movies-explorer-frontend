@@ -27,7 +27,6 @@ function MoviesCardList({
   const [isMount, setMount] = useState(true);
   const screenWidth = useScreenWidth();
   const currentLocation = useLocation();
-  console.log(currentLocation)
   const { desktop, tablet, mobile } = settingsDevice;
 
   // количество отображаемых карточек при разной ширине экрана
@@ -40,7 +39,6 @@ function MoviesCardList({
       } else {
         setCardsParameters(mobile.cardsParamaters);
       }
-      console.log()
       return () => setMount(false);
     }
   }, [currentLocation.pathname, screenWidth, isMount, desktop, tablet, mobile]);
@@ -51,7 +49,6 @@ function MoviesCardList({
       const res = movies.filter(
         (item, i) => i < cardsParameters.total
       );
-      console.log(res);
       setFilterMoviesList(res);
     }
   }, [movies, cardsParameters.total]);
