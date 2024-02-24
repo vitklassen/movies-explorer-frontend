@@ -1,11 +1,16 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useContext } from "react";
 import FilterCheckbox from "../FilterCheckbox/FilterCheckbox.jsx";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext.js";
+import { useLocation } from "react-router-dom";
 function SearchForm({
   onSubmit,
   isCheckBox,
-  handleClickCheckBox,
-  currentMovieName
+  handleClickCheckbox,
 }) {
+  // данные текущего пользователя
+  const currentUser = useContext(CurrentUserContext);
+  //текущая локация 
+  const currentLocation = useLocation();
   //хук для доступа к input
   const movie = useRef();
   //функция сабмита формы
@@ -15,8 +20,10 @@ function SearchForm({
   };
   //инициализация начальных данных
   useEffect(() => {
-    movie.current.value = currentMovieName;
-  }, [currentMovieName]);
+    if(localStorage.getItem('currentMovieName') && currentLocation.pathname === '/movies') {
+      movie.current.value = localStorage.getItem('currentMovieName');
+    }
+  }, [currentUser]);
   return (
     <form
       className="movie-form"
@@ -46,7 +53,7 @@ function SearchForm({
       </fieldset>
       <FilterCheckbox
         isCheckBox={isCheckBox}
-        handleClickCheckBox={handleClickCheckBox}
+        handleClickCheckBox={handleClickCheckbox}
       />
     </form>
   );

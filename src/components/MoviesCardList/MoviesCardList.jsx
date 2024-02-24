@@ -1,23 +1,14 @@
 import { useEffect, useState } from "react";
 import MoviesCard from "../MoviesCard/MoviesCard.jsx";
-import SearchForm from "../SearchForm/SearchForm.jsx";
-import Preloader from "../Preloader/Preloader.jsx";
 import { useScreenWidth } from "../../hooks/useScreenWidth.js";
 import { settingsDevice } from "../../utils/constants.js";
 import { useLocation } from "react-router-dom";
 function MoviesCardList({
-  isCheckBox,
   movies,
-  onSubmit,
-  handleClickCheckBox,
-  children,
-  error,
-  stateError,
-  isSending,
-  currentMovieName,
-  handleClickMovieCardButton,
+  handleSaveMovie,
+  handleDeleteMovie,
   isSaveMoviesList,
-  saveMoviesList,
+  savedMoviesList,
 }) {
   const [filterMoviesList, setFilterMoviesList] = useState([]);
   const [cardsParameters, setCardsParameters] = useState({
@@ -45,10 +36,8 @@ function MoviesCardList({
 
   // изменяем отображаемый массив фильмов в зависимости от ширины экрана
   useEffect(() => {
-    if (movies.length) {
-      const res = movies.filter(
-        (item, i) => i < cardsParameters.total
-      );
+    if (movies && movies.length !== 0) {
+      const res = movies.filter((item, i) => i < cardsParameters.total);
       setFilterMoviesList(res);
     }
   }, [movies, cardsParameters.total]);
@@ -64,48 +53,29 @@ function MoviesCardList({
       setFilterMoviesList([...filterMoviesList, ...newCards]);
     }
   }
-
   return (
     <>
-      <main className="movies">
-        <SearchForm
-          onSubmit={onSubmit}
-          isCheckBox={isCheckBox}
-          handleClickCheckBox={handleClickCheckBox}
-          currentMovieName={currentMovieName}
-        />
-        {isSending ? (
-          <Preloader />
-        ) : stateError ? (
-          <h2 className="movies__error">{error}</h2>
-        ) : (
-          <>
-            <ul className="movies__cards">
-              {filterMoviesList.map((movie) => {
-                return (
-                  <MoviesCard
-                    key={movie.id || movie._id}
-                    movie={movie}
-                    handleClickMovieCardButton={handleClickMovieCardButton}
-                    isSaveMoviesList={isSaveMoviesList}
-                    saveMoviesList={saveMoviesList}
-                  />
-                );
-              })}
-            </ul>
-            {currentLocation.pathname === "/movies" &&
-              filterMoviesList.length >= 5 &&
-              filterMoviesList.length < movies.length && (
-                <button
-                  className="movies__button"
-                  onClick={handleClickMoreMovies}
-                >
-                  Ещё
-                </button>
-              )}
-          </>
+      <ul className="movies__cards">
+        {filterMoviesList.map((movie) => {
+          return (
+            <MoviesCard
+              key={movie.id || movie._id}
+              movie={movie}
+              handleSaveMovie={handleSaveMovie}
+              handleDeleteMovie={handleDeleteMovie}
+              isSaveMoviesList={isSaveMoviesList}
+              isSaved={savedMoviesList.some((item) => item.movieId === movie.id || item.movieId === movie.movieId)}
+            />
+          );
+        })}
+      </ul>
+      {currentLocation.pathname === "/movies" &&
+        filterMoviesList.length >= 5 &&
+        filterMoviesList.length < movies.length && (
+          <button className="movies__button" onClick={handleClickMoreMovies}>
+            Ещё
+          </button>
         )}
-      </main>
     </>
   );
 }

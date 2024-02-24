@@ -1,32 +1,18 @@
 export const findSuitableMovies = (movies, movieName) => {
-  const suitableMovies = [];
-  movies.forEach((movie) => {
-    if (
-      movie.nameRU.toLowerCase().includes(movieName.toLowerCase()) ||
-      movie.nameEN.toLowerCase().includes(movieName.toLowerCase())
-    ) {
-      suitableMovies.push(movie);
-    }
-  });
-  if(suitableMovies.length === 0) {
-    return undefined
-  }
-  return suitableMovies;
+  console.log(movies)
+  const suitableMoviesList = movies.filter(
+    (item) =>
+      item.nameRU.toLowerCase().includes(movieName.toLowerCase()) ||
+      item.nameEN.toLowerCase().includes(movieName.toLowerCase())
+  );
+  return suitableMoviesList;
 };
-export const findShortMovies = (currentMoviesList) => {
-  const shortMovies = [];
-  if(!currentMoviesList) {
-    return undefined;
-  }
-    currentMoviesList.forEach((movie) => {
-      if(movie.duration <= 40) {
-        shortMovies.push(movie);
-      }
-    });
-    return shortMovies;
+export const findShortMovies = (moviesList) => {
+  const shortMoviesList = moviesList.filter((item) => item.duration <= 40);
+  return shortMoviesList;
 }
 export const calculateDuration = (duration) => {
   const hour = String(Math.trunc(duration / 60));
   const minute = String(duration % 60);
-  return hour + 'ч ' + minute + 'м';
-}
+  return hour + "ч " + minute + "м";
+};

@@ -1,9 +1,19 @@
 import { calculateDuration } from "../../utils/filterMovies";
-function MoviesCard({ movie, handleClickMovieCardButton, isSaveMoviesList, saveMoviesList }) {
-  const isSaved = isSaveMoviesList || saveMoviesList.some((savedMovie) => {return movie.id === savedMovie.movieId});
-  const handleButtonClick = () => {
-    handleClickMovieCardButton(movie);
-  }
+import { useLocation } from "react-router-dom";
+const MoviesCard = ({
+  movie,
+  handleSaveMovie,
+  handleDeleteMovie,
+  isSaveMoviesList,
+  isSaved
+}) => {
+  const currentLocation = useLocation();
+  const saveMovie = () => {
+    handleSaveMovie(movie);
+  };
+  const deleteMovie = () => {
+    handleDeleteMovie(movie);
+  };
   return (
     <li className="card">
       <div className="card__description">
@@ -13,21 +23,27 @@ function MoviesCard({ movie, handleClickMovieCardButton, isSaveMoviesList, saveM
       <a className="card__link" href={movie.trailerLink} target="_blank">
         <img
           className="card__image"
-          src={isSaveMoviesList ? movie.image : `https://api.nomoreparties.co${movie.image.url}`}
+          src={
+            isSaveMoviesList
+              ? movie.image
+              : `https://api.nomoreparties.co${movie.image.url}`
+          }
           alt="Постер"
         ></img>
       </a>
-      <button
-        className={
-          isSaveMoviesList
-            ? "card__delete-button"
-            : isSaved
-            ? "card__save-button card__save-button_active"
-            : "card__save-button"
-        }
-        onClick={handleButtonClick}
-      >Сохранить</button>
+      {currentLocation.pathname === "/movies" ? (
+        <button
+          className={`card__save-button ${
+            isSaved ? "card__save-button_active" : ""
+          }`}
+          onClick={isSaved ? deleteMovie : saveMovie}
+        >
+          Сохранить
+        </button>
+      ) : (
+        <button className="card__delete-button" onClick={deleteMovie}></button>
+      )}
     </li>
   );
-}
+};
 export default MoviesCard;
