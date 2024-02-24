@@ -1,0 +1,27 @@
+.saved-movies {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 70px 70px 80px;
+    box-sizing: border-box;
+    font-family: 'Inter', Arial, sans-serif;
+    font-style: normal;
+    background-color: #202020;
+    width: 1280px;
+}
+@media screen and (max-width: 1280px){
+    .saved-movies {
+        max-width: 100%;
+    }
+}
+@media screen and (max-width: 992px){
+    .saved-movies {
+        padding: 70px 30px 80px;
+        max-width: 100%;
+    }
+}
+@media screen and (max-width: 576px){
+    .saved-movies {
+        padding:70px 10px 80px;
+    }
+}

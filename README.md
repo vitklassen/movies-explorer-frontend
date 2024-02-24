@@ -6,4 +6,8 @@
 
 IP 158.160.8.237
 
-Frontend
+Ссылка на pull request: https://github.com/vitklassen/movies-explorer-frontend/pull/2
+
+Frontend: https://vitklassenvm.nomoredomainswork.ru/
+
+Backend: https://api.vitklassenvm.nomoredomainswork.ru/
