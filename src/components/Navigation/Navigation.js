@@ -47,13 +47,13 @@ function Navigation(props) {
         ) : (
           <>
             <NavLink
-              to="/signup"
+              to="/sign-up"
               className="navigation__link navigation__link_to_register"
             >
               Регистрация
             </NavLink>
             <NavLink
-              to="/signin"
+              to="/sign-in"
               className="navigation__link navigation__link_to_login"
             >
               Войти

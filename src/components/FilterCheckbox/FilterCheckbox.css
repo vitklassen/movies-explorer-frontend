@@ -36,7 +36,7 @@
 }
 @media screen and (max-width: 768px){
     .toggle {
-        margin: 26px auto 51px 0;
+        margin-bottom: 51px;
     }
 }
 @media screen and (max-width: 320px){
